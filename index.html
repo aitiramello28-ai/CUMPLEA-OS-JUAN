@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz cumpleaños Juan Pablo!</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #201d2b, #494052);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .tarjeta {
+      max-width: 700px;
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      color: #ffd166;
+      font-size: clamp(30px, 7vw, 48px);
+      margin: 25px 0 10px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    #cuenta {
+      color: #ffd166;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px;
+    }
+
+    a {
+      display: inline-block;
+      background: #ffd166;
+      color: #282230;
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="tarjeta">
+
+    <img src="./foto.png"
+         alt="Foto de cumpleaños de Juan Pablo">
+
+    <h1>¡Feliz cumpleaños Juan Pablo!</h1>
+
+    <p>Esta sorpresa viene con música 🎶</p>
+
+    <div id="cuenta">
+      La canción comienza en 10...
+    </div>
+
+    <a id="boton"
+       href="https://www.youtube.com/watch?v=ID_DEL_VIDEO">
+       ¡Escuchar la canción!
+    </a>
+
+  </div>
+
+  <script>
+    const enlace = "https://www.youtube.com/watch?v=ID_DEL_VIDEO";
+
+    let segundos = 10;
+
+    const cuenta = document.getElementById("cuenta");
+
+    const boton = document.getElementById("boton");
+
+    const temporizador = setInterval(() => {
+
+      segundos--;
+
+      if (segundos > 0) {
+
+        cuenta.textContent =
+          "La canción comienza en " + segundos + "...";
+
+      } else {
+
+        clearInterval(temporizador);
+
+        cuenta.textContent = "¡A cantar! 🎵";
+
+        window.location.href = enlace;
+
+      }
+
+    }, 1000);
+
+    boton.href = enlace;
+
+  </script>
+
+</body>
+</html>
