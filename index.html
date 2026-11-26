@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +65,12 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    a:hover {
+      background: #ffe29a;
+    }
   </style>
+
 </head>
 
 <body>
@@ -83,20 +89,20 @@
     </div>
 
     <a id="boton"
-       href="https://youtu.be/JmP89cIGJZM?list=RDJmP89cIGJZM">
-       ¡Escuchar la canción!
+       href="https://www.youtube.com/watch?v=JmP89cIGJZM"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="display: none;">
+      ¡Vamos a escuchar Camarón! 🎵
     </a>
 
   </div>
 
   <script>
 
-    const enlace = "https://youtu.be/JmP89cIGJZM?list=RDJmP89cIGJZM";
-
     let segundos = 10;
 
     const cuenta = document.getElementById("cuenta");
-
     const boton = document.getElementById("boton");
 
     const temporizador = setInterval(() => {
@@ -114,16 +120,13 @@
 
         cuenta.textContent = "¡A cantar! 🎵";
 
-        window.location.href = enlace;
+        boton.style.display = "inline-block";
 
       }
 
     }, 1000);
 
-    boton.href = enlace;
-
   </script>
 
 </body>
 </html>
-
